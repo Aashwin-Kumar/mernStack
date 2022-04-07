@@ -2,19 +2,16 @@ const express = require("express");
 const mongoose = require("mongoose");
 const router = require("./routes/movie-routes");
 const cors = require("cors");
-const {MONGOURL} = require("./config/keys");
+const { MONGOURL } = require("./config/keys");
 const app = express();
-const PORT = 5000;
-
+const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors());
 app.use("/movies", router);
 
-mongoose.connect(MONGOURL, {
-  
-});
-console.log(MONGOURL)
+mongoose.connect(MONGOURL, {});
+
 if (process.env.NODE_ENV == "production") {
   const path = require("path");
   app.get("/", (req, res) => {
