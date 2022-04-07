@@ -4,7 +4,7 @@ const router = require("./routes/movie-routes");
 const cors = require("cors");
 const { MONGOURL } = require("./config/keys");
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 app.use(express.json());
 app.use(cors());
