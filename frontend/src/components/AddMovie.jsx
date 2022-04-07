@@ -1,10 +1,4 @@
-import {
-  Button,
-  FormControlLabel,
-  FormLabel,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { TextField } from "@mui/material";
 import { Box } from "@mui/system";
 import axios from "axios";
 import React, { useState } from "react";
@@ -46,7 +40,7 @@ const AddMovie = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className=''>
+      <form onSubmit={handleSubmit} className="">
         <Box
           display="flex"
           flexDirection="column"
