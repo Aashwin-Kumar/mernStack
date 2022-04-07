@@ -9,7 +9,7 @@ export const Movie = (props) => {
   const { _id, name, director, actor, poster } = props.movie;
   const deleteHandler = async () => {
     await axios
-      .delete(`http://localhost:5000/movies/${_id}`)
+      .delete(`https://mern-stack-rho.vercel.app/${_id}`)
       .then((res) => res.data)
       .then(()=> history('/'))
       .then(() => history(-1));

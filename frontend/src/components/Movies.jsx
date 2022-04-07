@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Movie } from "./Movie";
-const URL = "http://localhost:5000/movies";
+const URL = "https://mern-stack-rho.vercel.app/movies";
 
 const fetchDatas = async () => {
   return await axios.get(URL).then((res) => res.data);

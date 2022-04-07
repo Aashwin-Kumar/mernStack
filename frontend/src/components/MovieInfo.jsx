@@ -1,7 +1,4 @@
-import {
-  Box,
-  TextField,
-} from "@mui/material";
+import { Box, TextField } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -13,7 +10,7 @@ const MovieInfo = () => {
   useEffect(() => {
     const fetchHandler = async () => {
       await axios
-        .get(`http://localhost:5000/movies/${id}`)
+        .get(`https://mern-stack-rho.vercel.app/movies/${id}`)
         .then((res) => res.data)
         .then((data) => setInputs(data.movie));
     };
@@ -22,7 +19,7 @@ const MovieInfo = () => {
 
   const sendRequest = async () => {
     await axios
-      .put(`http://localhost:5000/movies/${id}`, {
+      .put(`/movies/${id}`, {
         name: String(inputs.name),
         director: String(inputs.director),
         actor: String(inputs.actor),
@@ -32,7 +29,7 @@ const MovieInfo = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    sendRequest().then(() => history("/movies"));
+    sendRequest().then(() => history("https://mern-stack-rho.vercel.app/movies"));
   };
   const handleChange = (e) => {
     setInputs((prevState) => ({

@@ -24,7 +24,7 @@ const AddMovie = () => {
 
   const sendRequest = async () => {
     await axios
-      .post("http://localhost:5000/movies", {
+      .post("https://mern-stack-rho.vercel.app/movies", {
         name: String(inputs.name),
         director: String(inputs.director),
         actor: String(inputs.actor),
